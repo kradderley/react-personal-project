@@ -8,14 +8,26 @@ const Featured = () => {
   const [featured, setFeatured] = useState([]);
 
   const getData = async () => {
-    try {
+    const storage = localStorage.getItem("featured");
+
+    const isJson = (str) => {
+      try {
+        JSON.parse(str);
+      } catch (e) {
+        return false;
+      }
+      return true;
+    };
+
+    if (storage && isJson(storage)) {
+      setFeatured(JSON.parse(storage));
+    } else {
       const { data } = await axios.get(
-        `https://api.spoonacular.com/recipes/random?number=10&apiKey=79943d6f4fdc475fb21b36f7b7a7d2bf?`
+        `https://api.spoonacular.com/recipes/random?number=10&apiKey=79943d6f4fdc475fb21b36f7b7a7d2bf`
       );
+      localStorage.setItem("featured", JSON.stringify(data.recipes));
       setFeatured(data.recipes);
       console.log(data);
-    } catch (error) {
-      console.log(error);
     }
   };
 
@@ -29,7 +41,7 @@ const Featured = () => {
       {featured.map((recipe) => {
         return (
           <>
-            <SplideSlide>
+            <SplideSlide key={recipe.id}>
               <p className="featured-title" key={recipe.id}>
                 {recipe.title}
               </p>
