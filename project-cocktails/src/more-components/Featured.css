@@ -1,0 +1,9 @@
+.featured-title {
+  font-size: 15px;
+  font-weight: bold; 
+}
+
+.featured-image {
+  border-radius: 30px;
+  width: 400px;
+}
