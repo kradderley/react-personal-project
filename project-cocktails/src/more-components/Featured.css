@@ -1,6 +1,7 @@
 .featured-title {
   font-size: 15px;
-  font-weight: bold; 
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 .featured-image {

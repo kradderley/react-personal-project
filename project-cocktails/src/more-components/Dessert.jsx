@@ -1,15 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import axios from "axios";
-import { useEffect, useState } from "react";
-import "../more-components/Featured.css";
+import {  useState } from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/splide.min.css";
 
-const Featured = () => {
-  const [featured, setFeatured] = useState([]);
+const Dessert = () => {
+  const [dessert, setDessert] = useState([]);
 
   const getData = async () => {
-    const storage = localStorage.getItem("featured");
+    const storage = localStorage.getItem("dessert");
 
     const isJson = (str) => {
       try {
@@ -21,13 +20,13 @@ const Featured = () => {
     };
 
     if (storage && isJson(storage)) {
-      setFeatured(JSON.parse(storage));
+      setDessert(JSON.parse(storage));
     } else {
       const { data } = await axios.get(
-        `https://api.spoonacular.com/recipes/random?number=10&apiKey=79943d6f4fdc475fb21b36f7b7a7d2bf`
+        `https://api.spoonacular.com/recipes/random?number=10&tags=dessert&apiKey=79943d6f4fdc475fb21b36f7b7a7d2bf`
       );
-      localStorage.setItem("featured", JSON.stringify(data.recipes));
-      setFeatured(data.recipes);
+      localStorage.setItem("dessert", JSON.stringify(data.recipes));
+      setDessert(data.recipes);
       console.log(data);
     }
   };
@@ -38,16 +37,16 @@ const Featured = () => {
 
   return (
     <>
-      <h2>Featured Meals of the Day</h2>
+      <h2>Recommended Desserts of the Week</h2>
       <Splide
         options={{
-          perPage: 3,
+          perPage: 4,
           pagination: false,
           drag: "free",
           gap: "5rem",
         }}
       >
-        {featured.map((recipe) => {
+        {dessert.map((recipe) => {
           return (
             <>
               <SplideSlide key={recipe.id}>
@@ -68,4 +67,4 @@ const Featured = () => {
   );
 };
 
-export default Featured;
+export default Dessert;
