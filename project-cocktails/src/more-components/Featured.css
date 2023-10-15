@@ -1,3 +1,9 @@
+/* .featured-card {
+  display: flex; 
+  
+}
+
+
 .featured-title {
   font-size: 15px;
   font-weight: bold;
@@ -7,4 +13,33 @@
 .featured-image {
   border-radius: 30px;
   width: 400px;
+} */
+
+.nav-headings {
+  display: flex; 
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  
+
 }
+
+div h3 {
+  padding-right: 30px; 
+  padding-left: 30px;
+  margin-bottom: 75px; 
+  text-decoration: none;
+}
+
+
+.logo {
+  margin-top: 50px; 
+  position: relative; 
+}
+
+
+/* div NavLink {
+  display: flex; 
+} */
+
+

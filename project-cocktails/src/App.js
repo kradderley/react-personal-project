@@ -1,14 +1,12 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import Home from "./components/Home";
-import Search from "./components/Search";
+import React from "react";
+import Main from "./components/Main"; 
+import { BrowserRouter } from "react-router-dom";
+import { Router } from "react-router-dom";
 
 const App = () => {
-
   return (
     <>
-      <Search />
-      <Home />
+      <Main />
     </>
   );
 };
