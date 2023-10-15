@@ -6,6 +6,7 @@ import Categories from "../more-components/Categories";
 import Search from "../more-components/Search";
 import "../cat-components/Diet.css";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 // import { Splide, SplideSlide } from "@splidejs/react-splide";
 // import "@splidejs/splide/dist/css/splide.min.css";
 
@@ -61,12 +62,14 @@ const Diet = () => {
         {diet.map((item) => {
           return (
             <>
-              <div className="all-meal-cards">
-                <div className="diet-list" key={item.id}>
-                  <h4>{item.title}</h4>
-                  <img src={item.image} alt={item.title} />
+              <Link to={"/recipe/" + item.id}>
+                <div className="all-meal-cards">
+                  <div className="diet-list" key={item.id}>
+                    <h4>{item.title}</h4>
+                    <img src={item.image} alt={item.title} />
+                  </div>
                 </div>
-              </div>
+              </Link>
             </>
           );
         })}

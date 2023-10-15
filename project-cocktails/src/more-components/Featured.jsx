@@ -5,6 +5,7 @@ import "../more-components/Featured.css";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/splide.min.css";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Featured = () => {
   const [featured, setFeatured] = useState([]);
@@ -53,14 +54,16 @@ const Featured = () => {
             return (
               <SplideSlide key={recipe.id}>
                 <Card>
-                  <p className="featured-title" key={recipe.id}>
-                    {recipe.title}
-                  </p>
-                  <img
-                    className="featured-image"
-                    src={recipe.image}
-                    alt={recipe.title}
-                  />
+                  <Link to={"/recipe/" + recipe.id}>
+                    <p className="featured-title" key={recipe.id}>
+                      {recipe.title}
+                    </p>
+                    <img
+                      className="featured-image"
+                      src={recipe.image}
+                      alt={recipe.title}
+                    />
+                  </Link>
                 </Card>
               </SplideSlide>
             );

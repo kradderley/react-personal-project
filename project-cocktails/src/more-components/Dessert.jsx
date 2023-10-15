@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/splide.min.css";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Dessert = () => {
   const [dessert, setDessert] = useState([]);
@@ -42,7 +43,7 @@ const Dessert = () => {
         <h2>Recommended Desserts of the Week</h2>
         <Splide
           options={{
-            perPage: 3,
+            perPage: 4,
             pagination: false,
             drag: "free",
             gap: "5rem",
@@ -53,6 +54,7 @@ const Dessert = () => {
               <>
                 <SplideSlide key={recipe.id}>
                   <Card>
+                    <Link to={"/recipe/" + recipe.id}>
                     <p className="featured-title" key={recipe.id}>
                       {recipe.title}
                     </p>
@@ -61,6 +63,7 @@ const Dessert = () => {
                       src={recipe.image}
                       alt={recipe.title}
                     />
+                    </Link>
                   </Card>
                 </SplideSlide>
               </>
