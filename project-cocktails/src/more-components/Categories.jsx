@@ -46,8 +46,6 @@ const Categories = () => {
   );
 };
 
-// const NavLink = styled.div`
-// display: grid; 
-// `
+
 
 export default Categories;
