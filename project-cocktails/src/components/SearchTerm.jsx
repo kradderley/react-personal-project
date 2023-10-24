@@ -4,12 +4,21 @@ import { useParams } from "react-router-dom";
 import Search from "../more-components/Search";
 import Categories from "../more-components/Categories";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const SearchTerm = () => {
   const [searchTerm, setSearchTerm] = useState([]);
   let params = useParams();
 
-  const getSearchTerm = async () => {
+  // const getSearchTerm = async (name) => {
+  //   const { data } = await axios.get(
+  //     `https://api.spoonacular.com/recipes/complexSearch?number=12&query=${name}&apiKey=e76065d309ed4dd6be48db38203bd2ca`
+  //   );
+  //   setSearchTerm(data.results);
+  //   console.log(data);
+  // };
+
+  const getSearchTerm = async (name) => {
     const storage = localStorage.getItem("searchterm");
 
     const isJson = (str) => {
@@ -25,7 +34,7 @@ const SearchTerm = () => {
       setSearchTerm(JSON.parse(storage));
     } else {
       const { data } = await axios.get(
-        `https://api.spoonacular.com/recipes/complexSearch?number=12&query=blueberry&apiKey=e76065d309ed4dd6be48db38203bd2ca`
+        `https://api.spoonacular.com/recipes/complexSearch?number=12&query=${name}&apiKey=e76065d309ed4dd6be48db38203bd2ca`
       );
       localStorage.setItem("searchterm", JSON.stringify(data.results));
       setSearchTerm(data.results);
@@ -34,9 +43,9 @@ const SearchTerm = () => {
   };
 
   useEffect(() => {
-    getSearchTerm(params.search);
-    console.log(params.search);
-  }, [params.search]);
+    getSearchTerm(params.keyword);
+    console.log(params.keyword);
+  }, [params.keyword]);
 
   return (
     <>
@@ -47,12 +56,14 @@ const SearchTerm = () => {
         {searchTerm.map((item) => {
           return (
             <>
-              <div>
-                <div key={item.id}>
-                  <h4>{item.title}</h4>
-                  <img src={item.image} alt={item.title} />
+              <Link to={"/recipe/" + item.id}>
+                <div>
+                  <div key={item.id}>
+                    <h4>{item.title}</h4>
+                    <img src={item.image} alt={item.title} />
+                  </div>
                 </div>
-              </div>
+              </Link>
             </>
           );
         })}
