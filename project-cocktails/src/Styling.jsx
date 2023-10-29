@@ -2,13 +2,32 @@ import styled from "styled-components";
 
 export const Header = styled.div`
   h1 {
-    text-align: center;
+    text-align: start;
+    margin-top: 50px;
+  }
+
+  div {
+    display: inline-block;
+  }
+
+  .menu-bar {
+    display: none;
+  }
+
+  @media screen and (max-width: 1250px) {
+    .menu-bar {
+      display: block;
+      position: absolute;
+      right: 130px;
+      top: 60px;
+    }
   }
 `;
 
 export const Form = styled.form`
 // @media screen and (max-width: 400px) {
-    margin-top: 50px ; 
+    margin-top: 40px ; 
+    margin-bottom: 50px; 
 position; relative; 
 
 div {
@@ -23,7 +42,6 @@ input {
   border-radius: 100rem; 
   width: 60%
 
-
 // img {
 //   position: absolute; 
 //   top: 24%; 
@@ -34,21 +52,48 @@ input {
 
 export const Menu = styled.div`
   div {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-content: center;
+    // display: flex;
+    // justify-content: center;
+    // align-content: center;
   }
 
   h3 {
     padding-right: 30px;
     padding-left: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 
   img {
-    margin-top: 50px;
+    margin-top: 20px;
     position: relative;
+  }
+
+  ul {
+    text-align: center;
+  }
+
+  li {
+    list-style: none;
+    position: relative;
+    padding-bottom: 30px;
+    display: inline-block;
+  }
+
+  @media screen and (max-width: 1250px) {
+    img {
+      right: 30px;
+    }
+
+    ul {
+      text-align: end;
+    }
+
+    li {
+      display: block;
+      list-style: none;
+      position: relative;
+      padding-bottom: 30px;
+    }
   }
 `;
 

@@ -53,8 +53,8 @@ const Recipe = () => {
   return (
     <>
       <Heading />
-      <Search />
       <Categories />
+      <Search />
       <RecipeWrapper>
         <div>
           <h1>{info.title}</h1>

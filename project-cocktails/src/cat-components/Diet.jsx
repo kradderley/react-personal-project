@@ -56,8 +56,8 @@ const Diet = () => {
     <>
       <div>
         <Heading />
-        <Search />
         <Categories />
+        <Search />
       </div>
 
       <Grid>

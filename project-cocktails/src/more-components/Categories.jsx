@@ -9,39 +9,56 @@ import pescaterian from "../svg-components/fish.svg";
 import others from "../svg-components/nutrition.svg";
 import { Menu } from "../Styling";
 
+
 const Categories = () => {
   return (
     <>
       <Menu>
         <div>
-          <NavLink to={"/"}>
-            <img src={home} alt="home" />
-            <h3>Home</h3>
-          </NavLink>
-          <NavLink to={"/categories/glutenfree"}>
-            <img src={gluten} alt="gluten-free" />
-            <h3>Gluten-Free</h3>
-          </NavLink>
-          <NavLink to={"/categories/keto"}>
-            <img src={keto} alt="keto" />
-            <h3>Keto</h3>
-          </NavLink>
-          <NavLink to={"/categories/vegeterian"}>
-            <img src={vegetarian} alt="vegetarian" />
-            <h3>Vegeterian</h3>
-          </NavLink>
-          <NavLink to={"/categories/vegan"}>
-            <img src={vegan} alt="vegetarian" />
-            <h3>Vegan</h3>
-          </NavLink>
-          <NavLink to={"/categories/pescaterian"}>
-            <img src={pescaterian} alt="pescaterian" />
-            <h3>Pescatarian</h3>
-          </NavLink>
-          <NavLink to={"/categories/paleo"}>
-            <img src={others} alt="others" />
-            <h3>Others</h3>
-          </NavLink>
+          <ul>
+            <NavLink to={"/"}>
+              <li>
+                <img src={home} alt="home" />
+                <h3>Home</h3>
+              </li>
+            </NavLink>
+            <NavLink to={"/categories/glutenfree"}>
+              <li>
+                <img src={gluten} alt="gluten-free" />
+                <h3>Gluten-Free</h3>
+              </li>
+            </NavLink>
+            <NavLink to={"/categories/keto"}>
+              <li>
+                <img src={keto} alt="keto" />
+                <h3>Keto</h3>
+              </li>
+            </NavLink>
+            <NavLink to={"/categories/vegeterian"}>
+              <li>
+                <img src={vegetarian} alt="vegetarian" />
+                <h3>Vegeterian</h3>
+              </li>
+            </NavLink>
+            <NavLink to={"/categories/vegan"}>
+              <li>
+                <img src={vegan} alt="vegetarian" />
+                <h3>Vegan</h3>
+              </li>
+            </NavLink>
+            <NavLink to={"/categories/pescaterian"}>
+              <li>
+                <img src={pescaterian} alt="pescaterian" />
+                <h3>Pescatarian</h3>
+              </li>
+            </NavLink>
+            <NavLink to={"/categories/paleo"}>
+              <li>
+                <img src={others} alt="others" />
+                <h3>Others</h3>
+              </li>
+            </NavLink>
+          </ul>
         </div>
       </Menu>
     </>
