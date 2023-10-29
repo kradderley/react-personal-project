@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 import "../more-components/Featured.css";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/splide.min.css";
-import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { Wrapper, Card } from "../Styling";
 
 const Featured = () => {
   const [featured, setFeatured] = useState([]);
@@ -74,41 +74,5 @@ const Featured = () => {
   );
 };
 
-const Wrapper = styled.div`
-  margin: 50px 50px;
-`;
-
-const Card = styled.div`
-  min-height: 25rem;
-  min-width: 20rem; 
-  border-radius: 2rem;
-  overflow: hidden;
-  position: relative;
-
-  img {
-    border-radius: 2rem;
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  p {
-    position: absolute; 
-    z-index: 100; 
-    left: 50%
-    bottom: 0%; 
-    transform: translate (-50%, 0%); 
-    background-color: black; 
-    color: white; 
-    font-weight: 600; 
-    width: 100%; 
-    text-align: center; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-  }
-`;
 
 export default Featured;

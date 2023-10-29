@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import styled from "styled-components";
+import { RecipeWrapper, Button, Info } from "../Styling";
 import { useParams } from "react-router-dom";
 import Search from "../more-components/Search";
 import Categories from "../more-components/Categories";
+import Heading from "../more-components/Heading";
 
 const Recipe = () => {
   let params = useParams();
@@ -51,6 +52,7 @@ const Recipe = () => {
 
   return (
     <>
+      <Heading />
       <Search />
       <Categories />
       <RecipeWrapper>
@@ -75,6 +77,7 @@ const Recipe = () => {
           >
             Ingredients
           </Button>
+
           {click === "instructions" && (
             <div>
               <p dangerouslySetInnerHTML={{ __html: info.instructions }}></p>
@@ -93,46 +96,5 @@ const Recipe = () => {
     </>
   );
 };
-
-const RecipeWrapper = styled.div`
-  margin-top: 10px;
-  margin-bottom: 50px;
-  margin-left: 50px;
-  margin-right: 50px;
-  display: flex;
-
-  .clicked {
-    background-color: black;
-    color: white;
-  }
-
-  h1 {
-    margin-bottom: 30px;
-  }
-
-  div {
-    margin-right: 75px;
-  }
-`;
-
-const Button = styled.button`
-  padding: 30px 70px;
-  margin-bottom: 50px;
-  margin-top: 50px;
-  margin-left: 50px;
-  background: white;
-  color: black;
-  border: 2px solid black;
-  font-size: 17.5px;
-  border-radius: 20px;
-`;
-
-const Info = styled.div`
-  margin-left: 40px;
-
-  p {
-    font-size: 20px;
-  }
-`;
 
 export default Recipe;

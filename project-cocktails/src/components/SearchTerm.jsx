@@ -5,6 +5,7 @@ import Search from "../more-components/Search";
 import Categories from "../more-components/Categories";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import Heading from "../more-components/Heading";
 
 const SearchTerm = () => {
   const [searchTerm, setSearchTerm] = useState([]);
@@ -49,6 +50,7 @@ const SearchTerm = () => {
 
   return (
     <>
+      <Heading />
       <Search />
       <Categories />
 

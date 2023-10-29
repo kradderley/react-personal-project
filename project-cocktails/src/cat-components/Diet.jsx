@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Categories from "../more-components/Categories";
 import Search from "../more-components/Search";
+import Heading from "../more-components/Heading";
 import "../cat-components/Diet.css";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
@@ -54,6 +55,7 @@ const Diet = () => {
   return (
     <>
       <div>
+        <Heading />
         <Search />
         <Categories />
       </div>
