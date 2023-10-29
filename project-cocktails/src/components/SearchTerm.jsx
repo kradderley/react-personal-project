@@ -51,9 +51,9 @@ const SearchTerm = () => {
   return (
     <>
       <Heading />
+
       <Search />
       <Categories />
-
       <Grid>
         {searchTerm.map((item) => {
           return (

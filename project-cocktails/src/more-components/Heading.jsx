@@ -9,8 +9,9 @@ const Heading = () => {
         <NavLink to={"/"}>
           <h1>La Recette</h1>
         </NavLink>
-
-        <FaBars className="menu-bar" size="30px" />
+        <button className="menu-bar">
+          <FaBars  size="30px" />
+        </button>
       </Header>
     </>
   );

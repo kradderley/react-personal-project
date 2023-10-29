@@ -15,11 +15,17 @@ export const Header = styled.div`
   }
 
   @media screen and (max-width: 1250px) {
+    button {
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+
     .menu-bar {
       display: block;
       position: absolute;
-      right: 130px;
-      top: 60px;
+      right: 70px;
+      top: 55px;
     }
   }
 `;
@@ -66,6 +72,7 @@ export const Menu = styled.div`
   img {
     margin-top: 20px;
     position: relative;
+    left: px; 
   }
 
   ul {
@@ -80,21 +87,24 @@ export const Menu = styled.div`
   }
 
   @media screen and (max-width: 1250px) {
-    img {
-      right: 30px;
-    }
+//    ul {
+//     background: gray; 
+//     position: fixed; 
+//     width: 100%; 
+//     height: 100vh; 
+//     top: 80px; 
+//     left: 0; 
+//    }
 
-    ul {
-      text-align: end;
-    }
+//    li {
+//     display: block; 
+//    }
 
-    li {
-      display: block;
-      list-style: none;
-      position: relative;
-      padding-bottom: 30px;
-    }
-  }
+//    h3:hover {
+//     background: black; 
+//     color: yellow; 
+//    }
+//   }
 `;
 
 export const Wrapper = styled.div`
