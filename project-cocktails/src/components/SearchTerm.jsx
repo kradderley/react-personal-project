@@ -58,12 +58,12 @@ const SearchTerm = () => {
           return (
             <>
               <Link to={"/recipe/" + item.id}>
-                <div>
+                <SearchCard>
                   <div key={item.id}>
-                    <h4>{item.title}</h4>
+                    <h3>{item.title}</h3>
                     <img src={item.image} alt={item.title} />
                   </div>
-                </div>
+                </SearchCard>
               </Link>
             </>
           );

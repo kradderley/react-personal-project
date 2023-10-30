@@ -153,96 +153,82 @@ export const Card = styled.div`
 `;
 
 export const RecipeWrapper = styled.div`
-  @media screen and (max-width: 1200px) {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  h1 {
+    margin-top: 10px;
+    margin-bottom: 30px;
     text-align: center;
+  }
 
+  img {
+    max-width: 100%;
+    margin-bottom: 15px;
+  }
+
+  p {
+    font-size: 20 px;
+    // font-weight: bold;
+    line-height: 25px;
+    margin-bottom: 40px;
+  }
+
+  @media screen and (min-width: 730px) {
     h1 {
-      margin-top: 10px;
-      margin-bottom: 30px;
-      text-align: center;
-    }
-
-    img {
-      max-width: 100%;
-      margin-bottom: 15px;
-    }
-
-    div {
-      //   display: flex;
-      //   flex-direction: column;
-      //   text-align: center;
+      font-size: 40px;
     }
 
     p {
-      font-size: 20 px;
-      font-weight: bold;
-      line-height: 25px;
-    }
-  }
-
-  @media screen and (min-width: 500px and max-width: 1000px) {
-    margin-top: 10px;
-    margin-bottom: 50px;
-    margin-left: 50px;
-    margin-right: 50px;
-    display: flex;
-
-    .clicked {
-      background-color: black;
-      color: white;
-    }
-
-    h1 {
-      margin-bottom: 30px;
-    }
-
-    div {
-      margin-right: 75px;
+      font-size: 22px;
+      line-height: 30px;
     }
   }
 `;
 
 export const Button = styled.button`
-  @media screen and (max-width: 600px) {
-    padding: 30px 70px;
+  padding: 30px 70px;
+  margin-top: 20px;
+  background: white;
+  color: black;
+  border: 2px solid black;
+  font-weight: bold; 
+  font-size: 17.5px;
+  border-radius: 20px;
 
-    margin-top: 20px;
-    background: white;
-    color: black;
-    border: 2px solid black;
-    font-size: 17.5px;
-    border-radius: 20px;
+  @media screen and (min-width: 580px) {
+    margin-left: 30px;
+    margin-right: 30px;
   }
-
-  //   padding: 30px 70px;
-  //   margin-bottom: 50px;
-  //   margin-top: 50px;
-  //   margin-left: 50px;
-  //   background: white;
-  //   color: black;
-  //   border: 2px solid black;
-  //   font-size: 17.5px;
-  //   border-radius: 20px;
 `;
 
 export const Info = styled.div`
-  @media screen and (max-width: 600px) {
-    div {
-      margin-top: 60px;
-      text-align: start;
-    }
+  div {
+    margin-top: 60px;
+    text-align: start;
+  }
 
+  li {
+    padding: 10px;
+  }
+
+  ul {
+    margin-top: 60px;
+    list-style-type: none;
+    // font-weight: bold;
+    padding: 10px;
+  }
+
+  @media screen and (min-width: 730px) {
     li {
-      padding: 10px;
-    }
-
-    ul {
-      list-style-type: none;
-      font-weight: bold;
+      font-size: 22px;
     }
   }
+
+  // @media screen and (max-width: 600px) {
+
+  // }
 
   // margin-left: 40px;
 
@@ -255,7 +241,7 @@ export const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   grid-gap: 3rem;
-  justify-items: center; 
+  justify-items: center;
 `;
 
 export const SearchCard = styled.div`
@@ -267,8 +253,9 @@ a {
 text-decoration: none;
 }
 
-h4 {
-text-align: center; 
+div h3 {
+text-align: center;
+font-size: 20px; 
 padding: 1rem; 
 }
 `;
