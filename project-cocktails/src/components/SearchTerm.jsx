@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Search from "../more-components/Search";
 import Categories from "../more-components/Categories";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Grid, SearchCard} from "../Styling"; 
 import Heading from "../more-components/Heading";
 
 const SearchTerm = () => {
@@ -74,25 +73,6 @@ const SearchTerm = () => {
   );
 };
 
-const Grid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  grid-gap: 3rem;
-`;
 
-const Card = styled.div`
-img {
-width: 100%, 
-border-radius: 2rem; 
-}
-a {
-text-decoration: none;
-}
-
-h4 {
-text-align: center; 
-padding: 1rem; 
-}
-`;
 
 export default SearchTerm;

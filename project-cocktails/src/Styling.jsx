@@ -108,7 +108,7 @@ export const Menu = styled.div`
 `;
 
 export const Wrapper = styled.div`
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 450px) {
   }
 
   //   margin: 50px 50px;
@@ -116,7 +116,7 @@ export const Wrapper = styled.div`
 
 export const Card = styled.div`
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 480px) {
 
 }
 
@@ -153,7 +153,7 @@ export const Card = styled.div`
 `;
 
 export const RecipeWrapper = styled.div`
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 1200px) {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -249,4 +249,26 @@ export const Info = styled.div`
   //   p {
   //     font-size: 20px;
   //   }
+`;
+
+export const Grid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-gap: 3rem;
+  justify-items: center; 
+`;
+
+export const SearchCard = styled.div`
+img {
+width: 100%, 
+border-radius: 2rem; 
+}
+a {
+text-decoration: none;
+}
+
+h4 {
+text-align: center; 
+padding: 1rem; 
+}
 `;
