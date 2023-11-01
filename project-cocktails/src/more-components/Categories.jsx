@@ -1,4 +1,3 @@
-import "../more-components/Featured.css";
 import { NavLink } from "react-router-dom";
 import home from "../svg-components/restaurant.svg";
 import gluten from "../svg-components/glutenfree.svg";
@@ -8,7 +7,6 @@ import vegan from "../svg-components/vegan.svg";
 import pescaterian from "../svg-components/fish.svg";
 import others from "../svg-components/nutrition.svg";
 import { Menu } from "../Styling";
-
 
 const Categories = () => {
   return (

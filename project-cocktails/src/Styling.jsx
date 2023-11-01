@@ -119,7 +119,6 @@ export const Card = styled.div`
 @media screen and (max-width: 480px) {
 
 }
-
   min-height: 25rem;
   min-width: 20rem; 
   border-radius: 2rem;
@@ -193,7 +192,7 @@ export const Button = styled.button`
   background: white;
   color: black;
   border: 2px solid black;
-  font-weight: bold; 
+  font-weight: bold;
   font-size: 17.5px;
   border-radius: 20px;
 
@@ -245,17 +244,36 @@ export const Grid = styled.div`
 `;
 
 export const SearchCard = styled.div`
-img {
-width: 100%, 
-border-radius: 2rem; 
-}
-a {
-text-decoration: none;
-}
+position: relative; 
 
-div h3 {
-text-align: center;
-font-size: 20px; 
-padding: 1rem; 
-}
+  img {
+    object-fit: cover;
+    width: 100%;
+    border-radius: 2rem;
+
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  div h3 {
+    font-size: 17px;
+    padding: 1rem;
+    position: absolute; 
+    z-index: 100; 
+    // left: 50%
+    bottom: 0%; 
+    transform: translate (-50%, 0%); 
+    background-color: black; 
+    color: white; 
+    font-weight: 600; 
+    width: 100%; 
+    text-align: center; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+  }
+
+  
 `;
