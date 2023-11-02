@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Categories from "../more-components/Categories";
 import Search from "../more-components/Search";
-import Heading from "../more-components/Heading";
 import { Grid, SearchCard } from "../Styling";
 import { Link } from "react-router-dom";
 // import { Splide, SplideSlide } from "@splidejs/react-splide";
@@ -54,7 +53,6 @@ const Diet = () => {
   return (
     <>
       <div>
-        <Heading />
         <Categories />
         <Search />
       </div>

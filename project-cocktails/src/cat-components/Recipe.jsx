@@ -4,7 +4,6 @@ import { RecipeWrapper, Button, Info } from "../Styling";
 import { useParams } from "react-router-dom";
 import Search from "../more-components/Search";
 import Categories from "../more-components/Categories";
-import Heading from "../more-components/Heading";
 
 const Recipe = () => {
   let params = useParams();
@@ -52,7 +51,6 @@ const Recipe = () => {
 
   return (
     <>
-      <Heading />
       <Categories />
       <Search />
       <RecipeWrapper>

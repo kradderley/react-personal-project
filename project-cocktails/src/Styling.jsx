@@ -1,34 +1,38 @@
 import styled from "styled-components";
 
-export const Header = styled.div`
-  h1 {
-    text-align: start;
-    margin-top: 50px;
-  }
+// export const Header = styled.div`
+// // display: grid;
+// // grid-template-columns: 300px auto;
+// // justify-content: flex-end;
 
-  div {
-    display: inline-block;
-  }
+//   h1 {
+//     text-align: start;
+//     margin-top: 50px;
+//   }
 
-  .menu-bar {
-    display: none;
-  }
+//   div {
+//     display: inline-block;
+//   }
 
-  @media screen and (max-width: 1250px) {
-    button {
-      cursor: pointer;
-      background: none;
-      border: none;
-    }
+//   .menu-bar {
+//     display: none;
+//   }
 
-    .menu-bar {
-      display: block;
-      position: absolute;
-      right: 70px;
-      top: 55px;
-    }
-  }
-`;
+//   @media screen and (max-width: 1250px) {
+//     button {
+//       cursor: pointer;
+//       background: none;
+//       border: none;
+//     }
+
+//     .menu-bar {
+//       display: block;
+//       position: absolute;
+//       right: 70px;
+//       top: 55px;
+//     }
+//   }
+// `;
 
 export const Form = styled.form`
 // @media screen and (max-width: 400px) {
@@ -57,54 +61,101 @@ input {
 `;
 
 export const Menu = styled.div`
-  div {
-    // display: flex;
-    // justify-content: center;
-    // align-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+
+  .menu-bar {
+    color: white;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    display: none;
   }
 
-  h3 {
-    padding-right: 30px;
-    padding-left: 30px;
-    margin-bottom: 10px;
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: gray;
   }
 
-  img {
-    margin-top: 20px;
-    position: relative;
-    left: px; 
+  nav h1 {
+    font-size: 40px;
+    font-weight: bold;
+    margin: 30px;
+    color: white;
   }
 
-  ul {
-    text-align: center;
+  nav ul {
+    display: flex;
+    align-content: center;
+    padding-right: 40px;
   }
 
-  li {
+  nav ul li {
     list-style: none;
     position: relative;
-    padding-bottom: 30px;
-    display: inline-block;
+    padding-top: 35px;
   }
 
-  @media screen and (max-width: 1250px) {
-//    ul {
-//     background: gray; 
-//     position: fixed; 
-//     width: 100%; 
-//     height: 100vh; 
-//     top: 80px; 
-//     left: 0; 
-//    }
+  nav ul li:hover {
+    background-color: brown;
+    border-radius: 10px;
+  }
 
-//    li {
-//     display: block; 
-//    }
+  nav ul li h3 {
+    display: block;
+    color: white;
+    padding: 8px;
+    margin: 0 8px;
+    border-radius: 8px;
+    white-space: nowrap;
+  }
 
-//    h3:hover {
-//     background: black; 
-//     color: yellow; 
-//    }
-//   }
+  nav ul li img {
+    position: absolute;
+    right: 35%;
+    bottom: 45%;
+  }
+
+  @media screen and (max-width: 1096px) {
+    .menu-bar {
+      display: block;
+    }
+
+    nav {
+      flex-direction: column;
+      align-items: start;
+    }
+
+    nav ul {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      margin-bottom: 50px;
+    }
+
+    nav ul li {
+      width: 100%;
+    }
+
+    nav ul li:hover {
+    }
+
+    nav ul li h3 {
+      text-align: center;
+    }
+
+    nav ul li img {
+      top: 45%;
+      right: 67.5%;
+    }
+
+    nav ul.open {
+      display: flex;
+    }
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -143,6 +194,7 @@ export const Card = styled.div`
     background-color: black; 
     color: white; 
     font-weight: 600; 
+    font-size: 20px; 
     width: 100%; 
     text-align: center; 
     display: flex; 
@@ -155,6 +207,9 @@ export const RecipeWrapper = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
+  margin: 100px;
+  margin: 0% 10%;
+  margin-bottom: 50px;
 
   h1 {
     margin-top: 10px;
@@ -165,6 +220,7 @@ export const RecipeWrapper = styled.div`
   img {
     max-width: 100%;
     margin-bottom: 15px;
+    border-radius: 30px;
   }
 
   p {
@@ -241,16 +297,18 @@ export const Grid = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   grid-gap: 3rem;
   justify-items: center;
+  margin: 100px;
+  margin: 0% 10%;
+  margin-bottom: 50px;
 `;
 
 export const SearchCard = styled.div`
-position: relative; 
+  position: relative;
 
   img {
     object-fit: cover;
     width: 100%;
     border-radius: 2rem;
-
   }
 
   a {
@@ -260,20 +318,18 @@ position: relative;
   div h3 {
     font-size: 17px;
     padding: 1rem;
-    position: absolute; 
-    z-index: 100; 
+    position: absolute;
+    z-index: 100;
     // left: 50%
-    bottom: 0%; 
-    transform: translate (-50%, 0%); 
-    background-color: black; 
-    color: white; 
-    font-weight: 600; 
-    width: 100%; 
-    text-align: center; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
+    bottom: 0%;
+    transform: translate (-50%, 0%);
+    background-color: black;
+    color: white;
+    font-weight: 600;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-
-  
 `;

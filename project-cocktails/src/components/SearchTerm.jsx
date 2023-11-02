@@ -3,8 +3,7 @@ import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 import Search from "../more-components/Search";
 import Categories from "../more-components/Categories";
-import { Grid, SearchCard} from "../Styling"; 
-import Heading from "../more-components/Heading";
+import { Grid, SearchCard } from "../Styling";
 
 const SearchTerm = () => {
   const [searchTerm, setSearchTerm] = useState([]);
@@ -49,10 +48,8 @@ const SearchTerm = () => {
 
   return (
     <>
-      <Heading />
-
-      <Search />
       <Categories />
+      <Search />
       <Grid>
         {searchTerm.map((item) => {
           return (
@@ -72,7 +69,5 @@ const SearchTerm = () => {
     </>
   );
 };
-
-
 
 export default SearchTerm;
