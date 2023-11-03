@@ -2,7 +2,7 @@ import React from "react";
 import Home from "./Home";
 import { Route, Routes } from "react-router-dom";
 import Diet from "../cat-components/Diet";
-import SearchTerm from "./SearchTerm";
+import SearchTerm from "../cat-components/SearchTerm";
 import Recipe from "../cat-components/Recipe";
 
 const Main = () => {

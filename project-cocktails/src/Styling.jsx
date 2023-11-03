@@ -1,39 +1,5 @@
 import styled from "styled-components";
 
-// export const Header = styled.div`
-// // display: grid;
-// // grid-template-columns: 300px auto;
-// // justify-content: flex-end;
-
-//   h1 {
-//     text-align: start;
-//     margin-top: 50px;
-//   }
-
-//   div {
-//     display: inline-block;
-//   }
-
-//   .menu-bar {
-//     display: none;
-//   }
-
-//   @media screen and (max-width: 1250px) {
-//     button {
-//       cursor: pointer;
-//       background: none;
-//       border: none;
-//     }
-
-//     .menu-bar {
-//       display: block;
-//       position: absolute;
-//       right: 70px;
-//       top: 55px;
-//     }
-//   }
-// `;
-
 export const Form = styled.form`
 // @media screen and (max-width: 400px) {
     margin-top: 40px ; 
@@ -97,6 +63,7 @@ export const Menu = styled.div`
     list-style: none;
     position: relative;
     padding-top: 35px;
+    margin-bottom: 10px;
   }
 
   nav ul li:hover {
@@ -120,6 +87,8 @@ export const Menu = styled.div`
   }
 
   @media screen and (max-width: 1096px) {
+
+    
     .menu-bar {
       display: block;
     }
@@ -132,15 +101,18 @@ export const Menu = styled.div`
     nav ul {
       display: none;
       flex-direction: column;
-      width: 100%;
+      width: 95%;
       margin-bottom: 50px;
     }
 
     nav ul li {
       width: 100%;
+      padding-top: 15px;
+      padding-bottom: 15px;
     }
 
     nav ul li:hover {
+      width: 95%; 
     }
 
     nav ul li h3 {
@@ -148,8 +120,8 @@ export const Menu = styled.div`
     }
 
     nav ul li img {
-      top: 45%;
-      right: 67.5%;
+      top: 24%;
+      right: 72.5%;
     }
 
     nav ul.open {
