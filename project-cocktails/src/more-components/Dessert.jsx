@@ -3,8 +3,8 @@ import axios from "axios";
 import { useState } from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/splide.min.css";
-import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { DessertWrapper, DessertCard } from "../Styling";
 
 const Dessert = () => {
   const [dessert, setDessert] = useState([]);
@@ -39,21 +39,33 @@ const Dessert = () => {
 
   return (
     <>
-      <Wrapper>
-        <h2>Recommended Desserts of the Week</h2>
+      <DessertWrapper>
+        <h2>Featured Desserts of the Week</h2>
         <Splide
           options={{
             perPage: 4,
             pagination: false,
             drag: "free",
-            gap: "5rem",
+            width: '100vw', 
+            gap: "30px",
+            breakpoints: {
+              1920: {
+                perPage: 3,
+              },
+              1390: {
+                perPage: 2,
+              },
+              1050: {
+                perPage: 1,
+              },
+            },
           }}
         >
           {dessert.map((recipe) => {
             return (
               <>
                 <SplideSlide key={recipe.id}>
-                  <Card>
+                  <DessertCard>
                     <Link to={"/recipe/" + recipe.id}>
                     <p className="featured-title" key={recipe.id}>
                       {recipe.title}
@@ -64,52 +76,17 @@ const Dessert = () => {
                       alt={recipe.title}
                     />
                     </Link>
-                  </Card>
+                  </DessertCard>
                 </SplideSlide>
               </>
             );
           })}
         </Splide>
-      </Wrapper>
+      </DessertWrapper>
     </>
   );
 };
 
-const Wrapper = styled.div`
-  margin: 50px 50px;
-`;
 
-const Card = styled.div`
-  min-height: 25rem;
-  min-width: 20rem; 
-  border-radius: 2rem;
-  overflow: hidden;
-  position: relative;
-
-  img {
-    border-radius: 2rem;
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  p {
-    position: absolute; 
-    z-index: 100; 
-    left: 50%
-    bottom: 0%; 
-    transform: translate (-50%, 0%); 
-    background-color: black; 
-    color: white; 
-    font-weight: 600; 
-    width: 100%; 
-    text-align: center; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-  }
-`;
 
 export default Dessert;
