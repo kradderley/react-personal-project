@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const Form = styled.form`
 // @media screen and (max-width: 400px) {
-    margin-top: 40px ; 
-    margin-bottom: 50px; 
+    margin-top: 25px ; 
+    margin-bottom: 20px; 
 position; relative; 
 
 div {
@@ -87,8 +87,6 @@ export const Menu = styled.div`
   }
 
   @media screen and (max-width: 1096px) {
-
-    
     .menu-bar {
       display: block;
     }
@@ -112,7 +110,7 @@ export const Menu = styled.div`
     }
 
     nav ul li:hover {
-      width: 95%; 
+      width: 95%;
     }
 
     nav ul li h3 {
@@ -130,15 +128,16 @@ export const Menu = styled.div`
   }
 `;
 
-export const Wrapper = styled.div`
-  @media screen and (max-width: 450px) {
+export const FeaturedWrapper = styled.div`
+  h2 {
+    text-align: center;
+    margin-bottom: 50px;
   }
-
-  //   margin: 50px 50px;
 `;
 
-export const Card = styled.div`
+export const FeaturedCard = styled.div`
 
+margin-bottom: 50px; 
   min-height: 25rem;
   min-width: 20rem; 
   border-radius: 2rem;
@@ -164,6 +163,48 @@ export const Card = styled.div`
     color: white; 
     font-weight: 600; 
     font-size: 20px; 
+    width: 100%; 
+    text-align: center; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+  }
+`;
+
+export const DessertWrapper = styled.div`
+  margin: 50px 50px;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+`;
+
+export const DessertCard = styled.div`
+  min-height: 25rem;
+  min-width: 20rem; 
+  border-radius: 2rem;
+  overflow: hidden;
+  position: relative;
+
+  img {
+    border-radius: 2rem;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  p {
+    position: absolute; 
+    z-index: 100; 
+    left: 50%
+    bottom: 0%; 
+    transform: translate (-50%, 0%); 
+    background-color: black; 
+    color: white; 
+    font-weight: 600; 
     width: 100%; 
     text-align: center; 
     display: flex; 

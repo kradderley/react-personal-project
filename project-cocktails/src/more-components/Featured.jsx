@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/splide.min.css";
 import { Link } from "react-router-dom";
-import { Wrapper, Card } from "../Styling";
+import { FeaturedWrapper, FeaturedCard } from "../Styling";
 
 const Featured = () => {
   const [featured, setFeatured] = useState([]);
@@ -39,7 +39,7 @@ const Featured = () => {
 
   return (
     <>
-      <Wrapper>
+      <FeaturedWrapper>
         <h2>Featured Meals of the Day</h2>
         <Splide
           options={{
@@ -49,7 +49,7 @@ const Featured = () => {
             width: '100vw', 
             gap: "40px",
             breakpoints: {
-              1880: {
+              1920: {
                 perPage: 3,
               },
               1390: {
@@ -64,17 +64,17 @@ const Featured = () => {
           {featured.map((recipe) => {
             return (
               <SplideSlide key={recipe.id}>
-                <Card>
+                <FeaturedCard>
                   <Link to={"/recipe/" + recipe.id}>
                     <p key={recipe.id}>{recipe.title}</p>
                     <img src={recipe.image} alt={recipe.title} />
                   </Link>
-                </Card>
+                </FeaturedCard>
               </SplideSlide>
             );
           })}
         </Splide>
-      </Wrapper>
+      </FeaturedWrapper>
     </>
   );
 };

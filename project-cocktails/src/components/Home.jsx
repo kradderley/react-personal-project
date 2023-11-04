@@ -11,6 +11,7 @@ const Home = () => {
       <div
         style={{
           margin: 100,
+          marginTop: 60,
           marginBottom: 50,
         }}
       >
