@@ -139,9 +139,6 @@ export const Wrapper = styled.div`
 
 export const Card = styled.div`
 
-@media screen and (max-width: 480px) {
-
-}
   min-height: 25rem;
   min-width: 20rem; 
   border-radius: 2rem;

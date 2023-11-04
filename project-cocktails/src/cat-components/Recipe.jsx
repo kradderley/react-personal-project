@@ -45,7 +45,7 @@ const Recipe = () => {
   };
 
   useEffect(() => {
-    getInfo();
+    getInfo(params.name);
     console.log(params.name);
   }, [params.name]);
 
@@ -56,7 +56,7 @@ const Recipe = () => {
       <RecipeWrapper>
         <div>
           <h1>{info.title}</h1>
-          <img src={info.image} />
+          <img src={info.image} alt={info.image}/>
           <p dangerouslySetInnerHTML={{ __html: info.summary }}></p>
           <p>Cook Time: {info.readyInMinutes} mins</p>
           <p>Serving Size: {info.servings} </p>

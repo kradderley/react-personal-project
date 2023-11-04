@@ -25,7 +25,7 @@ const Featured = () => {
       setFeatured(JSON.parse(storage));
     } else {
       const { data } = await axios.get(
-        `https://api.spoonacular.com/recipes/random?number=10&apiKey=79943d6f4fdc475fb21b36f7b7a7d2bf`
+        `https://api.spoonacular.com/recipes/random?number=12&apiKey=79943d6f4fdc475fb21b36f7b7a7d2bf`
       );
       localStorage.setItem("featured", JSON.stringify(data.recipes));
       setFeatured(data.recipes);
@@ -43,10 +43,22 @@ const Featured = () => {
         <h2>Featured Meals of the Day</h2>
         <Splide
           options={{
-            perPage: 3,
+            perPage: 4,
             pagination: false,
             drag: "free",
-            gap: "100px",
+            width: '100vw', 
+            gap: "40px",
+            breakpoints: {
+              1880: {
+                perPage: 3,
+              },
+              1390: {
+                perPage: 2,
+              },
+              900: {
+                perPage: 1,
+              },
+            },
           }}
         >
           {featured.map((recipe) => {
@@ -54,14 +66,8 @@ const Featured = () => {
               <SplideSlide key={recipe.id}>
                 <Card>
                   <Link to={"/recipe/" + recipe.id}>
-                    <p  key={recipe.id}>
-                      {recipe.title}
-                    </p>
-                    <img
-                      
-                      src={recipe.image}
-                      alt={recipe.title}
-                    />
+                    <p key={recipe.id}>{recipe.title}</p>
+                    <img src={recipe.image} alt={recipe.title} />
                   </Link>
                 </Card>
               </SplideSlide>
@@ -72,6 +78,5 @@ const Featured = () => {
     </>
   );
 };
-
 
 export default Featured;

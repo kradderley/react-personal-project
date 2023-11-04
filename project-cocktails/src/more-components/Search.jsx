@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import styled from "styled-components";
-import search from "../svg-components/search-icon.svg";
+// import styled from "styled-components";
+// import search from "../svg-components/search-icon.svg";
 import { useNavigate } from "react-router-dom";
 import { Form } from "../Styling";
 
