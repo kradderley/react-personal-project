@@ -40,13 +40,13 @@ const Featured = () => {
   return (
     <>
       <FeaturedWrapper>
-        <h2>Featured Meals of the Day</h2>
+        <h2>Featured Meals of the Week</h2>
         <Splide
           options={{
             perPage: 4,
             pagination: false,
             drag: "free",
-            width: '100vw', 
+            width: "100vw",
             gap: "40px",
             breakpoints: {
               1920: {

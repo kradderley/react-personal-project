@@ -1,29 +1,23 @@
 import styled from "styled-components";
 
 export const Form = styled.form`
-// @media screen and (max-width: 400px) {
-    margin-top: 25px ; 
-    margin-bottom: 20px; 
-position; relative; 
+  margin-top: 25px;
+  margin-bottom: 20px;
+  position: relative;
 
-div {
-  width: 100%; 
-  position: relative; 
-  text-align: center; 
-}
+  div {
+    width: 100%;
+    text-align: center;
+  }
 
-input {
-  font-size: 1.5rem; 
-  padding: 10px 50px ; 
-  border-radius: 100rem; 
-  width: 60%
-
-// img {
-//   position: absolute; 
-//   top: 24%; 
-//   left: 17.5%
-// }
-
+  input {
+    font-size: 1.5rem;
+    font-family: "Lora", serif;
+    padding: 10px 50px;
+    border-radius: 100rem;
+    width: 60%;
+    background-color: #fcf5ed;
+  }
 `;
 
 export const Menu = styled.div`
@@ -34,8 +28,8 @@ export const Menu = styled.div`
   .menu-bar {
     color: white;
     position: absolute;
-    top: 2rem;
-    right: 2rem;
+    top: 44px;
+    right: 60px;
     display: none;
   }
 
@@ -43,13 +37,15 @@ export const Menu = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: gray;
+    background-color: #739072;
   }
 
   nav h1 {
-    font-size: 40px;
-    font-weight: bold;
+    font-style: italic;
+    font-size: 50px;
+    font-weight: 100px;
     margin: 30px;
+    margin-left: 90px;
     color: white;
   }
 
@@ -67,7 +63,7 @@ export const Menu = styled.div`
   }
 
   nav ul li:hover {
-    background-color: brown;
+    background-color: #4f6f52;
     border-radius: 10px;
   }
 
@@ -86,7 +82,23 @@ export const Menu = styled.div`
     bottom: 45%;
   }
 
-  @media screen and (max-width: 1096px) {
+  @media screen and (max-width: 450px) {
+    nav h1 {
+      font-size: 40px;
+      font-weight: 100px;
+      margin-left: 30px;
+    }
+
+    .menu-bar {
+      color: white;
+      position: absolute;
+      top: 35px;
+      right: 32px;
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 1215px) {
     .menu-bar {
       display: block;
     }
@@ -132,6 +144,18 @@ export const FeaturedWrapper = styled.div`
   h2 {
     text-align: center;
     margin-bottom: 50px;
+    font-style: italic;
+  }
+
+  @media screen and (min-width: 570px) {
+    font-size: 26px;
+  }
+
+  @media screen and (max-width: 570px) {
+    h2 {
+      margin-top: 40px;
+      margin-bottom: 20px;
+    }
   }
 `;
 
@@ -145,6 +169,8 @@ margin-bottom: 50px;
   position: relative;
 
   img {
+    border: 1px solid; 
+    border-color: black; 
     border-radius: 2rem;
     position: absolute;
     left: 0;
@@ -162,12 +188,16 @@ margin-bottom: 50px;
     background-color: black; 
     color: white; 
     font-weight: 600; 
-    font-size: 20px; 
+    font-size: 22px; 
+    padding: 3px;
     width: 100%; 
     text-align: center; 
     display: flex; 
     justify-content: center; 
     align-items: center; 
+  }
+  @media screen and (max-width: 570px) {
+    margin-bottom: 0px;
   }
 `;
 
@@ -177,6 +207,21 @@ export const DessertWrapper = styled.div`
   h2 {
     text-align: center;
     margin-bottom: 50px;
+    font-style: italic;
+  }
+
+  @media screen and (max-width: 570px) {
+    margin-left: 0px;
+    margin-right: 0px;
+
+    h2 {
+      margin-top: 40px;
+      margin-bottom: 20px;
+    }
+  }
+
+  @media screen and (min-width: 570px) {
+    font-size: 20px;
   }
 `;
 
@@ -188,6 +233,8 @@ export const DessertCard = styled.div`
   position: relative;
 
   img {
+    border: 1px solid; 
+    border-color: black; 
     border-radius: 2rem;
     position: absolute;
     left: 0;
@@ -205,6 +252,8 @@ export const DessertCard = styled.div`
     background-color: black; 
     color: white; 
     font-weight: 600; 
+    font-size: 17px; 
+    padding: 3px;
     width: 100%; 
     text-align: center; 
     display: flex; 
@@ -261,6 +310,8 @@ export const Button = styled.button`
   font-weight: bold;
   font-size: 17.5px;
   border-radius: 20px;
+  background-color: #fcf5ed;
+  font-family: "Lora", serif;
 
   @media screen and (min-width: 580px) {
     margin-left: 30px;
@@ -318,6 +369,8 @@ export const SearchCard = styled.div`
   img {
     object-fit: cover;
     width: 100%;
+    border: 1px solid;
+    border-color: black;
     border-radius: 2rem;
   }
 

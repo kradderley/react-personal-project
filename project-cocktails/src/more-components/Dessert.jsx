@@ -3,7 +3,6 @@ import axios from "axios";
 import { useState } from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/splide.min.css";
-import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { DessertWrapper, DessertCard } from "../Styling";
 
@@ -41,7 +40,7 @@ const Dessert = () => {
   return (
     <>
       <DessertWrapper>
-        <h2>Recommended Desserts of the Week</h2>
+        <h2>Featured Desserts of the Week</h2>
         <Splide
           options={{
             perPage: 4,

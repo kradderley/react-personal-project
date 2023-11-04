@@ -26,7 +26,7 @@ const Search = () => {
             type="text"
             value={input}
             onInput={onInput}
-            placeholder="Enter name here"
+            placeholder="Enter meal here"
           />
         </div>
       </Form>
