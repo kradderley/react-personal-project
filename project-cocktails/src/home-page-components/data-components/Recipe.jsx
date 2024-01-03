@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { RecipeWrapper, Button, Info } from "../Styling";
+import { RecipeWrapper, Button, Info } from "../../Styling";
 import { useParams } from "react-router-dom";
-import Search from "../home-page-components/Search";
-import Categories from "../home-page-components/Categories";
+import Search from "../Search";
+import Categories from "../Categories";
 
 const Recipe = () => {
   let params = useParams();

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
-import Search from "../home-page-components/Search";
-import Categories from "../home-page-components/Categories";
-import { Grid, SearchCard } from "../Styling";
+import Search from "../Search";
+import Categories from "../Categories";
+import { Grid, SearchCard } from "../../Styling";
 
 const SearchTerm = () => {
   const [searchTerm, setSearchTerm] = useState([]);
