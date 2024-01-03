@@ -9,6 +9,14 @@ import { FeaturedWrapper, FeaturedCard } from "../Styling";
 const Featured = () => {
   const [featured, setFeatured] = useState([]);
 
+  // const getData = async () => {
+  //   const { data } = await axios.get(
+  //     `https://api.spoonacular.com/recipes/random?number=12&apiKey=79943d6f4fdc475fb21b36f7b7a7d2bf`
+  //   );
+  //   setFeatured(data.recipes);
+  //   console.log(data);
+  // };
+
   const getData = async () => {
     const storage = localStorage.getItem("featured");
 

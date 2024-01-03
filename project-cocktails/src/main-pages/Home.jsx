@@ -1,7 +1,7 @@
-import Categories from "../more-components/Categories";
-import Dessert from "../more-components/Dessert";
-import Featured from "../more-components/Featured";
-import Search from "../more-components/Search";
+import Categories from "../home-page-components/Categories";
+import Dessert from "../home-page-components/Dessert";
+import Featured from "../home-page-components/Featured";
+import Search from "../home-page-components/Search";
 import "./Home.css"
 
 const Home = () => {

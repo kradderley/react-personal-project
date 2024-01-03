@@ -82,8 +82,8 @@ const Categories = () => {
               to={"/categories/paleo"}
             >
               <li>
-                <img src={others} alt="others" />
-                <h3>Others</h3>
+                <img src={others} alt="paleo" />
+                <h3>Paleo</h3>
               </li>
             </NavLink>
           </ul>
