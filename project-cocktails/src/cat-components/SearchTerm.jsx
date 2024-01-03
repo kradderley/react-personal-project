@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
-import Search from "../more-components/Search";
-import Categories from "../more-components/Categories";
+import Search from "../home-page-components/Search";
+import Categories from "../home-page-components/Categories";
 import { Grid, SearchCard } from "../Styling";
 
 const SearchTerm = () => {

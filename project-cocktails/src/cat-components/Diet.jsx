@@ -2,8 +2,8 @@ import React from "react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Categories from "../more-components/Categories";
-import Search from "../more-components/Search";
+import Categories from "../home-page-components/Categories";
+import Search from "../home-page-components/Search";
 import { Grid, SearchCard } from "../Styling";
 import { Link } from "react-router-dom";
 // import { Splide, SplideSlide } from "@splidejs/react-splide";
@@ -13,15 +13,16 @@ const Diet = () => {
   const [diet, setDiet] = useState([]);
   let params = useParams();
 
-  const getData = async (name) => {
-    //   const { data } = await axios.get(
-    //     `https://api.spoonacular.com/recipes/complexSearch?number=12&diet=${name}&apiKey=e76065d309ed4dd6be48db38203bd2ca`
-    //   );
-    //   localStorage.setItem("diet", JSON.stringify(data.results));
-    //   setDiet(data.results);
-    //   console.log(data);
+  // const getData = async (name) => {
+  //     const { data } = await axios.get(
+  //       `https://api.spoonacular.com/recipes/complexSearch?number=12&diet=${name}&apiKey=e76065d309ed4dd6be48db38203bd2ca`
+  //     );
+  //     localStorage.setItem("diet", JSON.stringify(data.results));
+  //     setDiet(data.results);
+  //     console.log(data) };
 
-    // using the option below so that we do not use up all the API calls while working on the project
+  // using the option below so that we do not use up all the API calls while working on the project
+  const getData = async (name) => {
     const storage = localStorage.getItem("diet");
 
     const isJson = (str) => {

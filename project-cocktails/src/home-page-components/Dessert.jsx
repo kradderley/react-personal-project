@@ -9,6 +9,14 @@ import { DessertWrapper, DessertCard } from "../Styling";
 const Dessert = () => {
   const [dessert, setDessert] = useState([]);
 
+  // const getData = async () => {
+  //   const { data } = await axios.get(
+  //           `https://api.spoonacular.com/recipes/random?number=12&tags=dessert&apiKey=79943d6f4fdc475fb21b36f7b7a7d2bf`
+  //         );
+  //         setDessert(data.recipes);
+  //         console.log(data);
+  // };
+
   const getData = async () => {
     const storage = localStorage.getItem("dessert");
 
@@ -46,7 +54,7 @@ const Dessert = () => {
             perPage: 4,
             pagination: false,
             drag: "free",
-            width: '100vw', 
+            width: "100vw",
             gap: "30px",
             breakpoints: {
               1920: {
@@ -67,14 +75,14 @@ const Dessert = () => {
                 <SplideSlide key={recipe.id}>
                   <DessertCard>
                     <Link to={"/recipe/" + recipe.id}>
-                    <p className="featured-title" key={recipe.id}>
-                      {recipe.title}
-                    </p>
-                    <img
-                      className="featured-image"
-                      src={recipe.image}
-                      alt={recipe.title}
-                    />
+                      <p className="featured-title" key={recipe.id}>
+                        {recipe.title}
+                      </p>
+                      <img
+                        className="featured-image"
+                        src={recipe.image}
+                        alt={recipe.title}
+                      />
                     </Link>
                   </DessertCard>
                 </SplideSlide>
@@ -86,7 +94,4 @@ const Dessert = () => {
     </>
   );
 };
-
-
-
 export default Dessert;

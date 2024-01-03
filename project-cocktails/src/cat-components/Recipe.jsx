@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { RecipeWrapper, Button, Info } from "../Styling";
 import { useParams } from "react-router-dom";
-import Search from "../more-components/Search";
-import Categories from "../more-components/Categories";
+import Search from "../home-page-components/Search";
+import Categories from "../home-page-components/Categories";
 
 const Recipe = () => {
   let params = useParams();
@@ -56,7 +56,7 @@ const Recipe = () => {
       <RecipeWrapper>
         <div>
           <h1>{info.title}</h1>
-          <img src={info.image} alt={info.image}/>
+          <img src={info.image} alt={info.image} />
           <p dangerouslySetInnerHTML={{ __html: info.summary }}></p>
           <p>Cook Time: {info.readyInMinutes} mins</p>
           <p>Serving Size: {info.servings} </p>

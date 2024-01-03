@@ -1,13 +1,10 @@
 import React from "react";
-import Main from "./components/Main";
-import { BrowserRouter } from "react-router-dom";
+import Pages from "./main-pages/Pages";
 
 const App = () => {
   return (
     <>
-      <BrowserRouter>
-        <Main />
-      </BrowserRouter>
+      <Pages />
     </>
   );
 };
