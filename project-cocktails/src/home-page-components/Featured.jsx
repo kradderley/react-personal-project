@@ -6,12 +6,13 @@ import "@splidejs/splide/dist/css/splide.min.css";
 import { Link } from "react-router-dom";
 import { FeaturedWrapper, FeaturedCard } from "../Styling";
 
+
 const Featured = () => {
   const [featured, setFeatured] = useState([]);
 
   // const getData = async () => {
   //   const { data } = await axios.get(
-  //     `https://api.spoonacular.com/recipes/random?number=12&apiKey=79943d6f4fdc475fb21b36f7b7a7d2bf`
+  //     `https://api.spoonacular.com/recipes/random?number=12&apiKey=${process.env.REACT_APP_API_KEY_ONE}`
   //   );
   //   setFeatured(data.recipes);
   //   console.log(data);

@@ -11,7 +11,7 @@ const SearchTerm = () => {
 
   // const getSearchTerm = async (name) => {
   //   const { data } = await axios.get(
-  //     `https://api.spoonacular.com/recipes/complexSearch?number=12&query=${name}&apiKey=e76065d309ed4dd6be48db38203bd2ca`
+  //     `https://api.spoonacular.com/recipes/complexSearch?number=12&query=${name}&apiKey=${process.env.REACT_APP_API_KEY_ONE}`
   //   );
   //   setSearchTerm(data.results);
   //   console.log(data);
@@ -33,7 +33,7 @@ const SearchTerm = () => {
       setSearchTerm(JSON.parse(storage));
     } else {
       const { data } = await axios.get(
-        `https://api.spoonacular.com/recipes/complexSearch?number=12&query=${name}&apiKey=e76065d309ed4dd6be48db38203bd2ca`
+        `https://api.spoonacular.com/recipes/complexSearch?number=12&query=${name}&apiKey=79943d6f4fdc475fb21b36f7b7a7d2bf`
       );
       localStorage.setItem("searchterm", JSON.stringify(data.results));
       setSearchTerm(data.results);

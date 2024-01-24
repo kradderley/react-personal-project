@@ -13,7 +13,7 @@ const Recipe = () => {
 
   // const getInfo = async () => {
   //   const { data } = await axios.get(
-  //     `https://api.spoonacular.com/recipes/${params.name}/information?apiKey=79943d6f4fdc475fb21b36f7b7a7d2bf`
+  //     `https://api.spoonacular.com/recipes/${params.name}/information?apiKey=${process.env.REACT_APP_API_KEY_ONE}`
   //   );
   //   setInfo(data);
   //   console.log(data);
@@ -45,8 +45,8 @@ const Recipe = () => {
   };
 
   useEffect(() => {
-    getInfo(params.name);
-    console.log(params.name);
+    getInfo(params.name); 
+    console.log(params.name)
   }, [params.name]);
 
   return (

@@ -11,7 +11,7 @@ const Dessert = () => {
 
   // const getData = async () => {
   //   const { data } = await axios.get(
-  //           `https://api.spoonacular.com/recipes/random?number=12&tags=dessert&apiKey=79943d6f4fdc475fb21b36f7b7a7d2bf`
+  //           `https://api.spoonacular.com/recipes/random?number=12&tags=dessert&apiKey=${process.env.REACT_APP_API_KEY_ONE}`
   //         );
   //         setDessert(data.recipes);
   //         console.log(data);
@@ -72,9 +72,9 @@ const Dessert = () => {
           {dessert.map((recipe) => {
             return (
               <>
-                <SplideSlide key={recipe.id}>
+                <SplideSlide>
                   <DessertCard>
-                    <Link to={"/recipe/" + recipe.id}>
+                    <Link to={"/recipe/" + recipe.id} key={recipe.title}>
                       <p className="featured-title" key={recipe.id}>
                         {recipe.title}
                       </p>
