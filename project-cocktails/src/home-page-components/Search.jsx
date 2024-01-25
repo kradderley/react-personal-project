@@ -6,6 +6,9 @@ const Search = () => {
   const [input, setInput] = useState("");
   const nav = useNavigate();
 
+  // insert defensive check so that it does not submit unless something is in the
+  // search box 
+
   const onInput = (e) => {
     setInput(e.target.value);
   };
@@ -25,6 +28,9 @@ const Search = () => {
             onInput={onInput}
             placeholder="ex. Butter, eggs, cereal etc."
           />
+          <button onSubmit={onSubmit}>
+            Submit
+          </button>
         </div>
       </Form>
     </>

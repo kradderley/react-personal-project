@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const Form = styled.form`
-  margin-top: 25px;
-  margin-bottom: 20px;
+  margin-top: 50px;
+  margin-bottom: 100px;
   position: relative;
 
   div {
@@ -15,8 +15,18 @@ export const Form = styled.form`
     font-family: "Lora", serif;
     padding: 10px 50px;
     border-radius: 100rem;
-    width: 60%;
+    width: 40%;
     background-color: #fcf5ed;
+  }
+
+  button {
+    font-size: 20px; 
+    margin-left: 10px; 
+    background-color: #fcf5ed; 
+    padding: 10px 30px;
+    border-radius: 100rem;
+    position: relative; 
+    top: -3px; 
   }
 `;
 

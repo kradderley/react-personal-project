@@ -5,13 +5,16 @@ import Search from "../Search";
 import Categories from "../Categories";
 import { Grid, SearchCard } from "../../Styling";
 
-const SearchTerm = () => {
+const SearchedResult = () => {
   const [searchTerm, setSearchTerm] = useState([]);
+  // const [currentPage, setCurrentPage] = useState(1);
+  // const [itemsPerPage, setItemsPerPage] = useState(12);
+
   let params = useParams();
 
   // const getSearchTerm = async (name) => {
   //   const { data } = await axios.get(
-  //     `https://api.spoonacular.com/recipes/complexSearch?number=12&query=${name}&apiKey=${process.env.REACT_APP_API_KEY_ONE}`
+  //     `https://api.spoonacular.com/recipes/complexSearch?number=100&query=${name}&apiKey=${process.env.REACT_APP_API_KEY_ONE}`
   //   );
   //   setSearchTerm(data.results);
   //   console.log(data);
@@ -33,13 +36,19 @@ const SearchTerm = () => {
       setSearchTerm(JSON.parse(storage));
     } else {
       const { data } = await axios.get(
-        `https://api.spoonacular.com/recipes/complexSearch?number=12&query=${name}&apiKey=79943d6f4fdc475fb21b36f7b7a7d2bf`
+        `https://api.spoonacular.com/recipes/complexSearch?number=100&query=${name}&apiKey=79943d6f4fdc475fb21b36f7b7a7d2bf`
       );
       localStorage.setItem("searchterm", JSON.stringify(data.results));
       setSearchTerm(data.results);
       console.log(data);
     }
   };
+
+  // const lastIndex = currentPage * itemsPerPage;
+  // const firstIndex = lastIndex - itemsPerPage;
+  // const currentPostsOnPage = () => {
+  //   Array.from(getSearchTerm).slice(firstIndex, lastIndex);
+  // };
 
   useEffect(() => {
     getSearchTerm(params.keyword);
@@ -70,4 +79,4 @@ const SearchTerm = () => {
   );
 };
 
-export default SearchTerm;
+export default SearchedResult;

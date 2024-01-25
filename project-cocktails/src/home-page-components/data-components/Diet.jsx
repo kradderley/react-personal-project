@@ -15,7 +15,7 @@ const Diet = () => {
 
   // const getData = async (name) => {
   //     const { data } = await axios.get(
-  //       `https://api.spoonacular.com/recipes/complexSearch?number=12&diet=${name}&apiKey=${process.env.REACT_APP_API_KEY_ONE}`
+  //       `https://api.spoonacular.com/recipes/complexSearch?number=100&diet=${name}&apiKey=${process.env.REACT_APP_API_KEY_ONE}`
   //     );
   //     localStorage.setItem("diet", JSON.stringify(data.results));
   //     setDiet(data.results);
@@ -38,7 +38,7 @@ const Diet = () => {
       setDiet(JSON.parse(storage));
     } else {
       const { data } = await axios.get(
-        `https://api.spoonacular.com/recipes/complexSearch?number=12&diet=${name}&apiKey=79943d6f4fdc475fb21b36f7b7a7d2bf`
+        `https://api.spoonacular.com/recipes/complexSearch?number=100&diet=${name}&apiKey=79943d6f4fdc475fb21b36f7b7a7d2bf`
       );
       localStorage.setItem("diet", JSON.stringify(data.results));
       setDiet(data.results);
