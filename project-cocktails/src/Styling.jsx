@@ -5,10 +5,24 @@ export const Form = styled.form`
   margin-bottom: 100px;
   position: relative;
 
+
+
   div {
     width: 100%;
     text-align: center;
   }
+
+  .search-pop-up {
+    display: none; 
+  }
+
+  .search-box:hover + .search-pop-up {
+    margin-top: 10px; 
+    display: block; 
+    position: fixed; 
+
+  }
+
 
   input {
     font-size: 1.5rem;
@@ -20,13 +34,13 @@ export const Form = styled.form`
   }
 
   button {
-    font-size: 20px; 
-    margin-left: 10px; 
-    background-color: #fcf5ed; 
+    font-size: 20px;
+    margin-left: 10px;
+    background-color: #fcf5ed;
     padding: 10px 30px;
     border-radius: 100rem;
-    position: relative; 
-    top: -3px; 
+    position: relative;
+    top: -3px;
   }
 `;
 

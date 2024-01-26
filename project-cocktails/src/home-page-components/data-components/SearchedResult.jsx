@@ -4,6 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import Search from "../Search";
 import Categories from "../Categories";
 import { Grid, SearchCard } from "../../Styling";
+// import { useNavigate } from "react-router-dom";
 
 const SearchedResult = () => {
   const [searchTerm, setSearchTerm] = useState([]);
@@ -12,37 +13,40 @@ const SearchedResult = () => {
 
   let params = useParams();
 
-  // const getSearchTerm = async (name) => {
-  //   const { data } = await axios.get(
-  //     `https://api.spoonacular.com/recipes/complexSearch?number=100&query=${name}&apiKey=${process.env.REACT_APP_API_KEY_ONE}`
-  //   );
-  //   setSearchTerm(data.results);
-  //   console.log(data);
-  // };
 
   const getSearchTerm = async (name) => {
-    const storage = localStorage.getItem("searchterm");
-
-    const isJson = (str) => {
-      try {
-        JSON.parse(str);
-      } catch (e) {
-        return false;
-      }
-      return true;
-    };
-
-    if (storage && isJson(storage)) {
-      setSearchTerm(JSON.parse(storage));
-    } else {
-      const { data } = await axios.get(
-        `https://api.spoonacular.com/recipes/complexSearch?number=100&query=${name}&apiKey=79943d6f4fdc475fb21b36f7b7a7d2bf`
-      );
-      localStorage.setItem("searchterm", JSON.stringify(data.results));
-      setSearchTerm(data.results);
-      console.log(data);
-    }
+    const { data } = await axios.get(
+      `https://api.spoonacular.com/recipes/complexSearch?number=12&query=${name}&apiKey=${process.env.REACT_APP_API_KEY_ONE}`
+    );
+    setSearchTerm(data.results);
+    console.log(data);
   };
+
+
+
+  // const getSearchTerm = async (name) => {
+  //   const storage = localStorage.getItem("searchterm");
+
+  //   const isJson = (str) => {
+  //     try {
+  //       JSON.parse(str);
+  //     } catch (e) {
+  //       return false;
+  //     }
+  //     return true;
+  //   };
+
+  //   if (storage && isJson(storage)) {
+  //     setSearchTerm(JSON.parse(storage));
+  //   } else {
+  //     const { data } = await axios.get(
+  //       `https://api.spoonacular.com/recipes/complexSearch?number=100&query=${name}&apiKey=79943d6f4fdc475fb21b36f7b7a7d2bf`
+  //     );
+  //     localStorage.setItem("searchterm", JSON.stringify(data.results));
+  //     setSearchTerm(data.results);
+  //     console.log(data);
+  //   }
+  // };
 
   // const lastIndex = currentPage * itemsPerPage;
   // const firstIndex = lastIndex - itemsPerPage;
@@ -51,8 +55,11 @@ const SearchedResult = () => {
   // };
 
   useEffect(() => {
-    getSearchTerm(params.keyword);
-    console.log(params.keyword);
+    // if (getSearchTerm("")) {
+    //   console.log("No words added");
+    // } else {
+      getSearchTerm(params.keyword);
+      console.log(params.keyword);
   }, [params.keyword]);
 
   return (
