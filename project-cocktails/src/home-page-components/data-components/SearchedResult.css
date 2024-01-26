@@ -6,7 +6,7 @@ p.pagination {
   font-size: 15px; 
 }
 
-.active {
+.chosenPage {
   font-weight: bolder;
   font-size: 20px; 
 }

@@ -58,10 +58,33 @@ const SearchedResult = () => {
 
   const shownSearches = searchTerm.slice(firstIndex, lastIndex);
 
+  const prevPage = () => {
+    if (currentPage !== 1) setCurrentPage(currentPage - 1);
+  };
+
+  const nextPage = () => {
+    if (currentPage !== totalPages) setCurrentPage(currentPage + 1);
+  };
+
+  const total = searchTerm.map(item => {
+    console.log(item)
+  })
+
+
   return (
     <>
       <Categories />
       <Search />
+      <select
+        onChange={(e) => {
+          setSearchTermPerPage(e.target.value);
+        }}
+      >
+        <option value="12">12</option>
+        <option value="24">24</option>
+        <option value="48">48</option>
+        <option value="">View All</option>
+      </select>
       <Grid>
         {shownSearches.map((item) => {
           return (
@@ -83,13 +106,13 @@ const SearchedResult = () => {
           <span
             key={page}
             onClick={() => setCurrentPage(page)}
-            className={`${currentPage === page ? "active" : ""}`}
+            className={`${currentPage === page ? "chosenPage" : ""}`}
           >
             {page}
           </span>
         ))}
-        <span>Prev &lt; &lt; </span>
-        <span>Next &gt; &gt;</span>
+        <span onClick={prevPage}>Prev &lt; &lt; </span>
+        <span onClick={nextPage}>Next &gt; &gt;</span>
       </p>
     </>
   );

@@ -21,7 +21,7 @@ const Diet = () => {
   //     setDiet(data.results);
   //     console.log(data) };
 
-  // using the option below so that we do not use up all the API calls while working on the project
+ 
   const getData = async (name) => {
     const storage = localStorage.getItem("diet");
 
@@ -80,19 +80,3 @@ const Diet = () => {
 };
 
 export default Diet;
-
-// const [diet, setDiet] = useState([]);
-//   let params = useParams();
-
-//   const getDiet = async (name) => {
-//     const { data } = await axios.get(
-//       `https://api.spoonacular.com/recipes/complexSearch?number=12&diet=${name}&apiKey=e76065d309ed4dd6be48db38203bd2ca`
-//     );
-//     setDiet(data.results);
-//     console.log(data.results);
-//   };
-
-//   useEffect(() => {
-//     getDiet(params.type);
-//     console.log(params.type);
-//   }, [params.type]);
