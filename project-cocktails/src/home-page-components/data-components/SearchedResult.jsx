@@ -5,12 +5,14 @@ import Search from "../Search";
 import Categories from "../Categories";
 import { Grid, SearchCard } from "../../Styling";
 import "./SearchedResult.css";
+import { useSelector, useDispatch } from "react-redux";
+import { nextPage, prevPage } from "../../redux/actions";
 
 const SearchedResult = () => {
   const [searchTerm, setSearchTerm] = useState([]);
   const [searchTermsPerPage, setSearchTermPerPage] = useState(12);
   const [currentPage, setCurrentPage] = useState(1);
-
+  
   let params = useParams();
 
   // const getSearchTerm = async (name) => {
@@ -66,9 +68,9 @@ const SearchedResult = () => {
     if (currentPage !== totalPages) setCurrentPage(currentPage + 1);
   };
 
-  const total = searchTerm.map(item => {
-    console.log(item)
-  })
+  // const total = searchTerm.map(item => {
+  //   console.log(item)
+  // })
 
 
   return (
