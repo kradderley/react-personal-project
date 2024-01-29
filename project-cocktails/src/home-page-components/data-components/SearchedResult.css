@@ -1,3 +1,10 @@
+.selectButton {
+  margin-bottom: 30px; 
+  display: flex; 
+  justify-content: flex-end;
+  margin-right: 50px; 
+}
+
 p.pagination {
   display: flex;
   justify-content: center;

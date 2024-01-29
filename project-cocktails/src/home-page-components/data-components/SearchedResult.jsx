@@ -66,16 +66,19 @@ const SearchedResult = () => {
     if (currentPage !== totalPages) setCurrentPage(currentPage + 1);
   };
 
-  const total = searchTerm.map(item => {
-    console.log(item)
-  })
+  // const total = searchTerm.map(item => {
+  //   console.count(item); 
+  // })
 
 
   return (
     <>
       <Categories />
       <Search />
-      <select
+      <div className = "selectButton">
+      <span>Total Recipes Per Page: &nbsp;</span>
+      <span>
+      <select 
         onChange={(e) => {
           setSearchTermPerPage(e.target.value);
         }}
@@ -83,8 +86,10 @@ const SearchedResult = () => {
         <option value="12">12</option>
         <option value="24">24</option>
         <option value="48">48</option>
-        <option value="">View All</option>
+        <option value="100">View All</option>
       </select>
+      </span>
+      </div>
       <Grid>
         {shownSearches.map((item) => {
           return (
